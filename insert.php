@@ -46,14 +46,14 @@ if (!empty($_POST["data"])) {
 <body>
 
 
-<div class="container">
+<div class="container mb-4 p-4" >
     <form class="m-5" method="post" action="insert.php">
         <div class="row">
             <div class="col-12 col-md-5 mb-4">
                 <div class="form-group">
                     <label for="muArtist">Artist</label>
                     <input class="form-control" type="text" name="data[muArtist]" id="muArtist"
-                           placeholder="Name of the Artist" value="">
+                           placeholder="Name of the Artist" value="" required>
                 </div>
             </div>
 
@@ -61,7 +61,7 @@ if (!empty($_POST["data"])) {
                 <div class="form-group">
                     <label for="muTrack">Track Name</label>
                     <input class="form-control" type="text" name="data[muTrack]" id="muTrack"
-                           placeholder="Name of the Track" value="">
+                           placeholder="Name of the Track" value="" required>
                 </div>
             </div>
 
@@ -69,9 +69,12 @@ if (!empty($_POST["data"])) {
                 <div class="form-group">
                     <label for="muDuration">Duration</label>
                     <input class="form-control" type="time" name="data[muDuration]" id="muDuration"
-                           placeholder="00,00,00" value="00.00.00" step="1" min="00.00.00">
+                           placeholder="00,00,00" value="00.00.00" step="1" min="00.00.00" required>
                 </div>
             </div>
+
+
+
 
 
             <div class="col-12 col-md-5 mb-4">
@@ -82,33 +85,61 @@ if (!empty($_POST["data"])) {
                 </div>
             </div>
 
-            <div class="col-12 col-md-2 mb-4">
+            <div class="col-12 col-md-3 mb-4">
                 <div class="form-group">
                     <label for="muRelease">Release date</label>
                     <input class="form-control" type="date" name="data[muRelease]" id="muRelease"
-                           placeholder="Date of Release" value="">
+                           placeholder="Date" value="">
                 </div>
             </div>
 
-            <div class="col-12 col-md-5 mb-4">
+            <div class="col-12 col-md-4 mb-4">
                 <div class="form-group">
-                    <label for="muGenre">Duration</label>
+                    <label for="muGenre">Genre</label>
                     <input class="form-control" type="text" name="muGenre]" id="muGenre"
                            placeholder="Genre of the track" value="" >
                 </div>
             </div>
 
 
-            <div class="col-12">
-                <div class="form-group"
-                <label for="prodBeskrivelse">Produkt Beskrivelse</label>
-                <textarea class="form-control" name="data[prodBeskrivelse]" id="prodBeskrivelse"
-                          placeholder="Produkt Beskrivelse"></textarea>
-            </div>
-        </div>
 
-        <div class="col-12 col-md-6 offset-md-6">
-            <button class="form-control btn btn-primary" type="submit" id="btnSubmit">Opret Produkt</button>
+
+
+            <div class="col-6 col-md-6 mb-4 rounded ">
+                <div class="form-group"
+                    <label for="muMembers">Band Members</label>
+                    <textarea class="form-control" name="data[muMembers]" id="muMembers"
+                          placeholder="Members of the group" ></textarea>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-6 mb-4 rounded ">
+                <div class="form-group"
+                    <label for="muStyles">Styles of the Artist</label>
+                    <textarea class="form-control" name="data[muStyles]" id="muStyls"
+                          placeholder="Describe the Artist Style/s" ></textarea>
+                </div>
+            </div>
+
+
+
+
+            <div class="col-3 input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">$</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                <div class="input-group-append">
+                    <span class="input-group-text">.00</span>
+                </div>
+            </div>
+
+
+
+        <hr class="p-1">
+
+        <div class="col-3 ">
+            <button class="form-control btn btn-primary" type="submit" id="btnSubmit">Opret Artist</button>
         </div>
 
 
