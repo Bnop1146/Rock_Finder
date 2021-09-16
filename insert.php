@@ -4,8 +4,11 @@ require "settings/init.php";
 if (!empty($_POST["data"])) {
     $data = $_POST["data"];
 
-    $sql = "INSERT INTO info_om_musikerne (muArtist, muTrack, muDuration, prodBeskrivelse) VALUES (:muArtist, :muTrack, :muDuration, :prodBeskrivelse)";
-    $bind = [":muArtist" => $data["muArtist"], ":muTrack" => $data["muTrack"], ":muDuration" => $data["muDuration"], "prodBeskrivelse" => $data["prodBeskrivelse"]];
+    $sql = "INSERT INTO info_om_musikerne (muArtist, muTrack, muDuration, muAlbum, muRelease, muGenre, muStyles, muMembers, muPrice) VALUES 
+                                        (:muArtist, :muTrack, :muDuration, :muAlbum, :muRelease, :muGenre, :muStyles, :muMembers, :muPrice)";
+    $bind = [":muArtist" => $data["muArtist"], ":muTrack" => $data["muTrack"], ":muDuration" => $data["muDuration"]
+        , "muAlbum" => $data["muAlbum"], "muRelease" => $data["muRelease"], "muGenre" => $data["muGenre"], "muStyles" => $data["muStyles"]
+        , "muMembers" => $data["muMembers"], "muPrice" => $data["muPrice"]];
 
     $db->sql($sql, $bind, false);
 
@@ -48,6 +51,7 @@ if (!empty($_POST["data"])) {
 
 <div class="container mb-4 p-4" >
     <form class="m-5" method="post" action="insert.php">
+
         <div class="row">
             <div class="col-12 col-md-5 mb-4">
                 <div class="form-group">
@@ -96,7 +100,7 @@ if (!empty($_POST["data"])) {
             <div class="col-12 col-md-4 mb-4">
                 <div class="form-group">
                     <label for="muGenre">Genre</label>
-                    <input class="form-control" type="text" name="muGenre]" id="muGenre"
+                    <input class="form-control" type="text" name="data[muGenre]" id="muGenre"
                            placeholder="Genre of the track" value="" >
                 </div>
             </div>
@@ -116,7 +120,7 @@ if (!empty($_POST["data"])) {
             <div class="col-6 col-md-6 mb-4 rounded ">
                 <div class="form-group"
                     <label for="muStyles">Styles of the Artist</label>
-                    <textarea class="form-control" name="data[muStyles]" id="muStyls"
+                    <textarea class="form-control" name="data[muStyles]" id="muStyles"
                           placeholder="Describe the Artist Style/s" ></textarea>
                 </div>
             </div>
@@ -128,7 +132,9 @@ if (!empty($_POST["data"])) {
                 <div class="input-group-prepend">
                     <span class="input-group-text">$</span>
                 </div>
-                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                    <label for="muPrice"></label>
+                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="data[muPrice]" id="muPrice"
+                    placeholder="Price for the Album in $">
                 <div class="input-group-append">
                     <span class="input-group-text">.00</span>
                 </div>
@@ -142,9 +148,6 @@ if (!empty($_POST["data"])) {
             <button class="form-control btn btn-primary" type="submit" id="btnSubmit">Opret Artist</button>
         </div>
 
-
-    </form>
-</div>
 
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
