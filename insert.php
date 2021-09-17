@@ -12,8 +12,7 @@ if (!empty($_POST["data"])) {
 
     $db->sql($sql, $bind, false);
 
-    echo "produktet er nu indsat. <a href='insert.php'>Indsæt et produkt mere</a>";
-    exit;
+
 
 
 }
@@ -46,12 +45,22 @@ if (!empty($_POST["data"])) {
 
 </head>
 
-<body>
+<body class="bg-dark bg-opacity-25">
 
 
-<div class="container mb-4 p-4" >
+
+
+
+
+
+<div class="container mb-4 p-4 bg-dark bg-opacity-10 "  >
+
+    <h3 class="p-3 ">
+        Rock Finder
+        <small class="text-muted">Help us create the best Rock library</small>
+    </h3>
+
     <form class="m-5" method="post" action="insert.php">
-
         <div class="row">
             <div class="col-12 col-md-5 mb-4">
                 <div class="form-group">
@@ -144,9 +153,33 @@ if (!empty($_POST["data"])) {
 
         <hr class="p-1">
 
-        <div class="col-3 ">
-            <button class="form-control btn btn-primary" type="submit" id="btnSubmit">Opret Artist</button>
+
+<div class="col-3 ">
+<button class=" btn btn-danger"  type="submit" id="btnSubmit"  data-toggle="modal" data-target="#exampleModal">Create Artist</button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Insert Completed</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <a class="btn btn-primary" type="button" href="insert.php" role="button">Insert New Artist</a>
+            </div>
         </div>
+    </div>
+</div>
+
+
 
 
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

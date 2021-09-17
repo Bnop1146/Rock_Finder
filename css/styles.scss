@@ -32,3 +32,26 @@ img {
 	max-width: 100%;
 	height: auto;
 }
+
+
+.bg {
+	width: 200px;
+	height: 200px;
+	display: block;
+	position: relative;
+}
+
+.bg::after {
+	content: "";
+	background: url(images/rockbg.jpg);
+	opacity: 0.5;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	z-index: -1;
+}
+
+
+
