@@ -3,17 +3,36 @@ require "settings/init.php";
 
 if (!empty($_POST["data"])) {
     $data = $_POST["data"];
+    $file = $_FILES;
 
-    $sql = "INSERT INTO info_om_musikerne (muArtist, muTrack, muDuration, muAlbum, muRelease, muGenre, muStyles, muMembers, muPrice) VALUES 
-                                        (:muArtist, :muTrack, :muDuration, :muAlbum, :muRelease, :muGenre, :muStyles, :muMembers, :muPrice)";
-    $bind = [":muArtist" => $data["muArtist"], ":muTrack" => $data["muTrack"], ":muDuration" => $data["muDuration"]
-        , "muAlbum" => $data["muAlbum"], "muRelease" => $data["muRelease"], "muGenre" => $data["muGenre"], "muStyles" => $data["muStyles"]
-        , "muMembers" => $data["muMembers"], "muPrice" => $data["muPrice"]];
+    if(!empty($file["muPicture"]["tmp_name"])) {
+        move_uploaded_file($file["muPicture"]["tmp_name"], "uploads/" . basename($file["muPicture"]["name"]));
+
+    }
+
+
+
+
+
+    $sql = "INSERT INTO info_om_musikerne (muArtist, muTrack, muDuration, muAlbum, muRelease, muGenre, muStyles, muMembers, muPrice, muPicture) VALUES 
+                                        (:muArtist, :muTrack, :muDuration, :muAlbum, :muRelease, :muGenre, :muStyles, :muMembers, :muPrice, :muPicture)";
+    $bind = [
+        ":muArtist" => $data["muArtist"],
+        ":muTrack" => $data["muTrack"],
+        ":muDuration" => $data["muDuration"],
+        "muAlbum" => $data["muAlbum"],
+        "muRelease" => $data["muRelease"],
+        "muGenre" => $data["muGenre"],
+        "muStyles" => $data["muStyles"],
+        "muMembers" => $data["muMembers"],
+        "muPrice" => $data["muPrice"],
+        "muPicture" => (!empty($file["muPicture"]["tmp_name"])) ? $file["muPicture"]["name"] : NULL,
+    ];
 
     $db->sql($sql, $bind, false);
 
-
-
+    header("Location: insert.php?status=1");
+    exit;
 
 }
 
@@ -60,13 +79,15 @@ if (!empty($_POST["data"])) {
         <small class="text-muted">Help us create the best Rock library</small>
     </h3>
 
-    <form class="m-5" method="post" action="insert.php">
+    <hr class="p-1">
+
+    <form class="m-5" method="post" action="insert.php" enctype="multipart/form-data">
         <div class="row">
             <div class="col-12 col-md-5 mb-4">
                 <div class="form-group">
                     <label for="muArtist">Artist</label>
                     <input class="form-control" type="text" name="data[muArtist]" id="muArtist"
-                           placeholder="Name of the Artist" value="" required>
+                           placeholder="Name of the Artist" value="" >
                 </div>
             </div>
 
@@ -74,7 +95,7 @@ if (!empty($_POST["data"])) {
                 <div class="form-group">
                     <label for="muTrack">Track Name</label>
                     <input class="form-control" type="text" name="data[muTrack]" id="muTrack"
-                           placeholder="Name of the Track" value="" required>
+                           placeholder="Name of the Track" value="" >
                 </div>
             </div>
 
@@ -82,7 +103,7 @@ if (!empty($_POST["data"])) {
                 <div class="form-group">
                     <label for="muDuration">Duration</label>
                     <input class="form-control" type="time" name="data[muDuration]" id="muDuration"
-                           placeholder="00,00,00" value="00.00.00" step="1" min="00.00.00" required>
+                           placeholder="00,00,00" value="00.00.00" min="00.00" step="1" >
                 </div>
             </div>
 
@@ -151,12 +172,26 @@ if (!empty($_POST["data"])) {
 
 
 
-        <hr class="p-1">
+
+
+            <div class="col-12">
+                <label class="form-label" for="muBillede">Album Cover Image</label>
+                <input type="file" class="form-control" id="muBillede" name="muPicture">
+            </div>
+
+
+
+        <hr class="p-1 mt-3">
+
+
+
 
 
 <div class="col-3 ">
 <button class=" btn btn-danger"  type="submit" id="btnSubmit"  data-toggle="modal" data-target="#exampleModal">Create Artist</button>
 </div>
+
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -165,7 +200,7 @@ if (!empty($_POST["data"])) {
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Insert Completed</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true">&times</span>
                 </button>
             </div>
             <div class="modal-body">
@@ -188,6 +223,21 @@ if (!empty($_POST["data"])) {
     tinymce.init({
         selector: 'textarea',
     });
+
+    const url = new URL(window.location.href);
+    const status = url.searchParams.get("status");
+
+    const modal = document.querySelector('.modal');
+    const bsModal = new bootstrap.Modal(modal);
+
+    modal.addEventListener('hide.bs.modal', () => {
+        window.history.replaceState(null, null, window.location.pathname);
+    })
+
+    if(status === "1"){
+        bsModal.show();
+    }
+
 </script>
 
 </body>
