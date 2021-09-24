@@ -5,13 +5,10 @@ if (!empty($_POST["data"])) {
     $data = $_POST["data"];
     $file = $_FILES;
 
-    if(!empty($file["muPicture"]["tmp_name"])) {
+    if (!empty($file["muPicture"]["tmp_name"])) {
         move_uploaded_file($file["muPicture"]["tmp_name"], "uploads/" . basename($file["muPicture"]["name"]));
 
     }
-
-
-
 
 
     $sql = "INSERT INTO info_om_musikerne (muArtist, muTrack, muDuration, muAlbum, muRelease, muGenre, muStyles, muMembers, muPrice, muPicture) VALUES 
@@ -64,18 +61,15 @@ if (!empty($_POST["data"])) {
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://kit.fontawesome.com/6b4a3d7b29.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.tiny.cloud/1/h4ru18k2oqic6a1dmyhtku0v5gp4y1lc52kb2r4saf99fguv/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://cdn.tiny.cloud/1/h4ru18k2oqic6a1dmyhtku0v5gp4y1lc52kb2r4saf99fguv/tinymce/5/tinymce.min.js"
+            referrerpolicy="origin"></script>
 
 </head>
 
-<body class="bg-gradient-danger">
+<body class="bg-gradient-danger text-white">
 
 
-
-
-
-
-<div id="main" class="container mb-4 p-4 bg-dark bg-opacity-10 rounded-2 "  >
+<div id="main" class="container mb-4 p-4 bg-dark bg-opacity-10 rounded-2 ">
 
     <h3 class="p-3  ">
         Rock On Library
@@ -88,28 +82,31 @@ if (!empty($_POST["data"])) {
         <div class="row">
 
 
-
-
-
-            <div class="col-sm-4" >
-                <img  src="uploads/Five%20Finger%20Death%20Punch.jpg" class="mx-auto d-block rounded" width="275" height="275" alt="">
+            <div class="col-sm-4 text-white">
+                <img src="uploads/Five%20Finger%20Death%20Punch.jpg" class="mx-auto d-block rounded" width="275"
+                     height="275" alt="">
             </div>
-            <div class="col-sm-8" id="detail">
+            <div class="col-sm-8 " id="detail">
                 <p>Track from your Library</p>
-                <h1 ><b>Wrong Side Of Heaven</b></h1>
+                <h1><b>Wrong Side Of Heaven</b></h1>
                 <h5 class="fw-bold">
                     <small class="text-muted">Artist :</small>
                     Five Finger Death Punch
                 </h5>
-                <button href="https://open.spotify.com/album/2p7EHDph1VrRTfgF9YpzCQ" class="btn" id="play">Play</button>
-                <span><button class="btn" id="like"><i class="fa fa-heart-o"></i></button></span>
-                <span><button class="btn" id="more"><b>...</b></button></span>
+                <p>
+                    <small class="text-muted">Genre :</small>
+                    Heavy Metal
+                </p>
+                <button href="https://open.spotify.com/album/2p7EHDph1VrRTfgF9YpzCQ" class="btn text-white">Play
+                </button>
+                <span><button class="btn"><i class="fa fa-heart-o text-white"></i></button></span>
+                <span><button class="btn text-white"><b>...</b></button></span>
             </div>
         </div>
 
         <br>
 
-        <table class="table ">
+        <table class="table text-white ">
             <thead>
             <tr>
                 <td>#</td>
@@ -129,26 +126,46 @@ if (!empty($_POST["data"])) {
             </tr>
 
 
-
             </tbody>
         </table>
+
+        <br>
+
+        <div class="row">
+            <ul class="col-md-5 list-group list-group-flush ">
+                <h4 class="fas fa-user-friends text-white">Current Members</h4>
+                <li class="list-group-item bg-transparent text-white">Ivan Moody
+                    <p class="text-white-50">Lead Vocalist</p>
+                </li>
+                <li class="list-group-item bg-transparent text-white">Andy James
+                    <p class="text-white-50">Lead Guitar, Backing Vocal</p>
+                </li>
+                <li class="list-group-item bg-transparent text-white">Charlie Engen
+                    <p class="text-white-50">Drums</p>
+                </li>
+                <li class="list-group-item bg-transparent text-white">Chris Kael
+                    <p class="text-white-50">Bass, Backing Vocals</p>
+                </li>
+                <li class="list-group-item bg-transparent text-white">Zoltan Bathory
+                    <p class="text-white-50">Rhythm Guitar</p>
+                </li>
+            </ul>
+
+
+            <ul class="col-md-5 list-group list-group-flush ">
+                <h4 class="fab fa-studiovinari text-white">Music Style/s</h4>
+                <li class="list-group-item bg-transparent text-white">Heavy Metal</li>
+                <li class="list-group-item bg-transparent text-white">Speed/Thrash Metal</li>
+                <li class="list-group-item bg-transparent text-white">Nü Metal</li>
+            </ul>
+
+        </div>
+
+
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
 <hr class="p-1 mt-3">
-
-
 
 
 <!--
@@ -159,7 +176,8 @@ if (!empty($_POST["data"])) {
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -180,12 +198,6 @@ if (!empty($_POST["data"])) {
 </div>
 
 
-
-
-
-
-
-
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
@@ -203,7 +215,7 @@ if (!empty($_POST["data"])) {
         window.history.replaceState(null, null, window.location.pathname);
     })
 
-    if(status === "1"){
+    if (status === "1") {
         bsModal.show();
     }
 

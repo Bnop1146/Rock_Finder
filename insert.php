@@ -64,7 +64,7 @@ if (!empty($_POST["data"])) {
 
 </head>
 
-<body class="bg-dark bg-opacity-25">
+<body class="bg-dark bg-opacity-25 text-white">
 
 
 
@@ -72,7 +72,7 @@ if (!empty($_POST["data"])) {
 
 
 
-<div class="container mb-4 p-4 bg-dark bg-opacity-10 rounded-2 "  >
+<div class="container mb-4 p-4 bg-dark bg-opacity-10 rounded-2 text-white "  >
 
     <h3 class="p-3 ">
         Rock Finder
