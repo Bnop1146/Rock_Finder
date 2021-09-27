@@ -3,8 +3,6 @@ require "settings/init.php";
 
 $data = json_decode(file_get_contents('php://input'), true);
 
-$data["password"] = "Bnop1146";
-
 
 
 /*
@@ -32,83 +30,83 @@ if (isset($data["password"]) && $data["password"] == "Bnop1146") {
     $sql = "SELECT * FROM info_om_musikerne WHERE 1=1";
     $bind = [];
 
-    if (!empty($data["nameSearch"])){
+    if (isset($data["artistSearch"])) {
         $sql .= " AND muArtist = :muArtist";
-        $bind[":muArtist"] = $data["nameSearch"];
+        $bind[":muArtist"] = $data["artistSearch"];
 
     }
 
-    if (!empty($data["nameSearch"])){
-        $sql .= " AND muTrack = :muTrack";
-        $bind[":muTrack"] = $data["nameSearch"];
+    if (isset($data["trackSearch"])) {
+        $sql .= " AND muTrack LIKE = :muTrack";
+        $bind[":muTrack"] = $data["trackSearch"];
 
     }
 
-    if (!empty($data["nameSearch"])){
+    if (isset($data["albumSearch"])) {
         $sql .= " AND muAlbum = :muAlbum";
-        $bind[":muAlbum"] = $data["nameSearch"];
+        $bind[":muAlbum"] = $data["albumSearch"];
 
     }
 
-    if (!empty($data["nameSearch"])){
+    if (isset($data["genreSearch"])) {
         $sql .= " AND muGenre = :muGenre";
-        $bind[":muGenre"] = $data["nameSearch"];
+        $bind[":muGenre"] = $data["genreSearch"];
 
     }
 
-    if (!empty($data["nameSearch"])){
+    if (isset($data["stylesSearch"])) {
         $sql .= " AND muStyles = :muStyles";
-        $bind[":muStyles"] = $data["nameSearch"];
+        $bind[":muStyles"] = $data["stylesSearch"];
 
     }
 
-    if (!empty($data["nameSearch"])){
-        $sql .= " AND muStyles = :muStyles";
-        $bind[":muStyles"] = $data["nameSearch"];
 
-    }
-
-    if (!empty($data["nameSearch"])){
+    if (isset($data["membersSearch"])) {
         $sql .= " AND muMembers = :muMembers";
-        $bind[":muMembers"] = $data["nameSearch"];
-
-    }
-
-    if (isset($data["numberData"])) {
-        $sql = "SELECT muRelease, muDuration, muPrice FROM info_om_musikerne ORDER BY muRelease, muDuration, muPrice  ASC";
-        $bind = [];
-
-        if (isset($data["numberData"])) {
-            $sql .= " AND muRelease >= :muRelease";
-            $bind[":muRelease"] = $data["numberData"];
-
-        }
-
-        if (isset($data["numberData"])) {
-            $sql .= " AND muDuration >= :muDuration";
-            $bind[":muDuration"] = $data["numberData"];
-
-        }
-
-        if (isset($data["numberData"])) {
-            $sql .= " AND muPrice >= :muPrice";
-            $bind[":muPrice"] = $data["numberData"];
-
-        }
+        $bind[":muMembers"] = $data["membersSearch"];
 
     }
 
 
-    $info_om_musikerne = $db ->sql($sql, $bind);
-    header("HTTP/1.1 200 OK");
+    if (isset($data["releaseSearch"])) {
+        $sql .= " AND muRelease >= :muRelease";
+        $bind[":muRelease"] = $data["releaseSearch"];
 
-    echo json_encode($info_om_musikerne);
+    }
+
+    if (isset($data["durationSearch"])) {
+        $sql .= " AND muDuration >= :muDuration";
+        $bind[":muDuration"] = $data["durationSearch"];
+
+    }
+
+    if (isset($data["priceSearch"])) {
+        $sql .= " AND muPrice >= :muPrice";
+        $bind[":muPrice"] = $data["priceSearch"];
+
+    }
+
+    if (isset($data["imageSearch"])) {
+        $sql .= " AND muPicture >= :muPicture";
+        $bind[":muPicture"] = $data["imageSearch"];
+
+    }
+
+
+$sql .= " ORDER BY muRelease DESC";
+
+
+$info_om_musikerne = $db->sql($sql, $bind);
+header("HTTP/1.1 200 OK");
+
+echo json_encode($info_om_musikerne);
 
 } else {
     header("HTTP/1.1 401 Unauthorized");
-    $error["errorMessage"] = "Din kode er forkert";
+    $error["errorMessage"] = "Your Password is Incorrect";
 
-    echo json_encode($error);}
+    echo json_encode($error);
+}
 
 
 

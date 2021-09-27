@@ -18,7 +18,32 @@
 <body>
 
 
+<div class="container">
+	<div class="products">
+		<div class="filter p-5">
+			<div class="row">
+				<div class="col-md-4 offset-md-4">
+					<input type="search" class="form-control trackSearch" placeholder="Search">
+				</div>
+			</div>
+		</div>
+
+		<div class="items">
+			<!-- Her vises musikken -->
+		</div>
+	</div>
+</div>
+
+
 
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script type="module">
+	import Products from "./js/products";
+
+	const products = new Products();
+	products.init();
+
+
+</script>
 </body>
 </html>

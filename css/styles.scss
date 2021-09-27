@@ -40,12 +40,12 @@ img {
 }
 
 
-.bg {
-	width: 200px;
-	height: 200px;
-	display: block;
-	position: relative;
+.products .items .card-img-top{
+	height: 250px;
+	width: 100%;
+	object-fit: cover;
 }
+
 
 
 
