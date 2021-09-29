@@ -30,8 +30,8 @@ if (isset($data["password"]) && $data["password"] == "Bnop1146") {
     $sql = "SELECT * FROM info_om_musikerne WHERE 1=1";
     $bind = [];
 
-    if (isset($data["artistSearch"])) {
-        $sql .= " AND muArtist = :muArtist";
+    if (!empty($data["artistSearch"])) {
+        $sql .= " AND muArtist LIKE CONCAT('%', :muArtist, '%')  ";
         $bind[":muArtist"] = $data["artistSearch"];
 
     }
@@ -68,8 +68,8 @@ if (isset($data["password"]) && $data["password"] == "Bnop1146") {
     }
 
 
-    if (isset($data["releaseSearch"])) {
-        $sql .= " AND muRelease >= :muRelease";
+    if (!empty($data["releaseSearch"])) {
+        $sql .= " AND muRelease LIKE CONCAT('%', :muRelease, '%')  ";
         $bind[":muRelease"] = $data["releaseSearch"];
 
     }
@@ -93,7 +93,7 @@ if (isset($data["password"]) && $data["password"] == "Bnop1146") {
     }
 
 
-$sql .= " ORDER BY muRelease DESC";
+$sql .= " ORDER BY muPrice DESC";
 
 
 $info_om_musikerne = $db->sql($sql, $bind);

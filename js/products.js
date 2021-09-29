@@ -10,12 +10,27 @@ export default class Products {
         this.items = this.rootElem.querySelector('.items');
 
         this.trackSearch = this.filter.querySelector('.trackSearch');
+        this.artistSearch = this.filter.querySelector('.artistSearch');
+        this.releaseSearch = this.filter.querySelector('.releaseSearch');
     }
 
     async init(){
         this.trackSearch.addEventListener('input', () => {
             this.render();
+
         });
+
+        this.artistSearch.addEventListener('input', () => {
+            this.render();
+
+        });
+
+        this.releaseSearch.addEventListener('input', () => {
+            this.render();
+
+        });
+
+
 
 
         await this.render();
@@ -59,8 +74,11 @@ export default class Products {
 
 
     async getData (){
+        console.log(this.artistSearch.value);
 
         this.data.trackSearch = this.trackSearch.value;
+        this.data.artistSearch = this.artistSearch.value;
+        this.data.releaseSearch = this.releaseSearch.value;
 
         const response = await fetch('muApi.php', {
             method: "POST",
