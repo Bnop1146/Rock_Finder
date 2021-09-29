@@ -33,12 +33,12 @@ export default class Products {
             col.classList.add('col-md-6', 'col-lg-4', 'col-xl-3');
 
             col.innerHTML = `
-                <div class="card h-100">
-                    <img src="uploads/${item.muPicture}" class="card-img-top">
+                <div class="card h-100 text-white">
+                    <img src="uploads/${item.muPicture}" class="card-img-top" alt="">
                     <div class="card-body d-flex flex-column justify-content-between">
                         <div>
-                            <h5 class="card-title">${item.muTrack}</h5>
-                            <h6 class="card-undertitle">${item.muArtist}</h6>
+                            <h5 class="card-title text-white">${item.muTrack}</h5>
+                            <h6 class="card-undertitle text-white">${item.muArtist}</h6>
                             <p class="card-text">${item.muAlbum}</p>
                         </div>
                         <a href="muPage.php?rockId=${item.rockId}" class="btn btn-primary text-white w-100 ">View</a>
@@ -59,7 +59,7 @@ export default class Products {
 
 
     async getData (){
-        console.log(this.trackSearch.value)
+
         this.data.trackSearch = this.trackSearch.value;
 
         const response = await fetch('muApi.php', {

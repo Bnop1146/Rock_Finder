@@ -83,7 +83,7 @@ if (!empty($_POST["data"])) {
 
 
             <div class="col-sm-4 text-white">
-                <img src="uploads/Five%20Finger%20Death%20Punch.jpg" class="mx-auto d-block rounded" width="275"
+                <img id="box-shadow" src="uploads/Five%20Finger%20Death%20Punch.jpg" class="mx-auto d-block rounded" width="275"
                      height="275" alt="">
             </div>
             <div class="col-sm-8 " id="detail">

@@ -36,8 +36,8 @@ if (isset($data["password"]) && $data["password"] == "Bnop1146") {
 
     }
 
-    if (isset($data["trackSearch"])) {
-        $sql .= " AND muTrack LIKE = :muTrack";
+    if (!empty($data["trackSearch"])) {
+        $sql .= " AND muTrack LIKE CONCAT('%', :muTrack, '%')  ";
         $bind[":muTrack"] = $data["trackSearch"];
 
     }
