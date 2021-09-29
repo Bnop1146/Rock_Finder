@@ -33,7 +33,7 @@ export default class Products {
             col.classList.add('col-md-6', 'col-lg-4', 'col-xl-3');
 
             col.innerHTML = `
-                <div class="card h-100 text-white">
+                <div class="card h-100 text-white bg-dark">
                     <img src="uploads/${item.muPicture}" class="card-img-top" alt="">
                     <div class="card-body d-flex flex-column justify-content-between">
                         <div>
@@ -41,7 +41,7 @@ export default class Products {
                             <h6 class="card-undertitle text-white">${item.muArtist}</h6>
                             <p class="card-text">${item.muAlbum}</p>
                         </div>
-                        <a href="muPage.php?rockId=${item.rockId}" class="btn btn-primary text-white w-100 ">View</a>
+                        <a href="muPage.php?rockId=${item.rockId}" class="btn btn-danger text-black w-100 ">View</a>
                     </div>
                 </div>
             
