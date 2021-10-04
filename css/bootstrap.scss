@@ -14,7 +14,8 @@ $custom-colors: (
  */
 
 $custom-colors: (
-        "primary": #007bff
+        "primary": rgba(253,86,2,0.67),
+        "minFarve": #ffff00
 
 );
 $theme-colors: map-merge($theme-colors, $custom-colors);

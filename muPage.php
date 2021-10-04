@@ -1,39 +1,10 @@
 <?php
 require "settings/init.php";
 
-if (!empty($_POST["data"])) {
-    $data = $_POST["data"];
-    $file = $_FILES;
-
-    if (!empty($file["muPicture"]["tmp_name"])) {
-        move_uploaded_file($file["muPicture"]["tmp_name"], "uploads/" . basename($file["muPicture"]["name"]));
-
-    }
-
-
-    $sql = "INSERT INTO info_om_musikerne (muArtist, muTrack, muDuration, muAlbum, muRelease, muGenre, muStyles, muMembers, muPrice, muPicture) VALUES 
-                                        (:muArtist, :muTrack, :muDuration, :muAlbum, :muRelease, :muGenre, :muStyles, :muMembers, :muPrice, :muPicture)";
-    $bind = [
-        ":muArtist" => $data["muArtist"],
-        ":muTrack" => $data["muTrack"],
-        ":muDuration" => $data["muDuration"],
-        "muAlbum" => $data["muAlbum"],
-        "muRelease" => $data["muRelease"],
-        "muGenre" => $data["muGenre"],
-        "muStyles" => $data["muStyles"],
-        "muMembers" => $data["muMembers"],
-        "muPrice" => $data["muPrice"],
-        "muPicture" => (!empty($file["muPicture"]["tmp_name"])) ? $file["muPicture"]["name"] : NULL,
-    ];
-
-    $db->sql($sql, $bind, false);
-
-    header("Location: insert.php?status=1");
-    exit;
-
-}
-
-
+$sql = "SELECT * FROM info_om_musikerne WHERE rockId = :rockId";
+$bind = [":rockId" => $_GET["rockId"]];
+$result = $db->sql($sql, $bind);
+$result = $result[0];
 ?>
 
 
@@ -66,36 +37,48 @@ if (!empty($_POST["data"])) {
 
 </head>
 
-<body class="bg-gradient-danger text-white">
+<body class="text-white">
 
 
-<div id="main" class="container mb-4 p-4 bg-dark bg-opacity-10 rounded-2 ">
+<nav class="navbar navbar-light bg-opacity-25 justify-content-between p-5">
+    <a class="navbar-brand fw-bold text-white"><h2>Rock Finder
+            <small class="text-muted">By the People for the Rockers</small>
+        </h2></a>
 
-    <h3 class="p-3  ">
-        Rock On Library
-        <small class="text-muted text-break">Helping Rockers Since 2021</small>
-    </h3>
+    <form class="form-inline">
+        <a href="index.html">
+            <div class="Home btn btn-primary text-white">
+                <i class="fas fa-home">Return Home</i>
+            </div>
+        </a>
+    </form>
+</nav>
 
-    <hr class="p-1">
+
+<div id="main" class="container mb-4 p-4 rounded-2 ">
+
+
+    <hr>
 
     <form class="m-5" method="post" action="insert.php" enctype="multipart/form-data">
         <div class="row">
 
 
             <div class="col-sm-4 text-white box-shadow">
-                <img src="uploads/Five%20Finger%20Death%20Punch.jpg" class="mx-auto d-block rounded" width="275"
+                <img src="uploads/<?php echo $result->muPicture; ?>" class="mx-auto d-block rounded imgMuPage"
+                     width="275"
                      height="275" alt="">
             </div>
             <div class="col-sm-8 " id="detail">
                 <p>Track from your Library</p>
-                <h1><b>Wrong Side Of Heaven</b></h1>
+                <h1><b><?php echo $result->muTrack; ?></b></h1>
                 <h5 class="fw-bold">
                     <small class="text-muted">Artist :</small>
-                    Five Finger Death Punch
+                    <?php echo $result->muArtist; ?>
                 </h5>
                 <p>
                     <small class="text-muted">Genre :</small>
-                    Heavy Metal
+                    <?php echo $result->muGenre; ?>
                 </p>
                 <button href="https://open.spotify.com/album/2p7EHDph1VrRTfgF9YpzCQ" class="btn text-white">Play
                 </button>
@@ -106,7 +89,7 @@ if (!empty($_POST["data"])) {
 
         <br>
 
-        <table class="table text-white ">
+        <table class="table text-white col-md-3 ">
             <thead>
             <tr>
                 <td>#</td>
@@ -119,10 +102,10 @@ if (!empty($_POST["data"])) {
             <tbody>
             <tr>
                 <td>1</td>
-                <td>The Wrong Side Of Heaven And The Righteous Side Of Hell</td>
-                <td>2013</td>
-                <td>4:31</td>
-                <td>11.99</td>
+                <td><?php echo $result->muAlbum; ?></td>
+                <td><?php echo $result->muRelease; ?></td>
+                <td><?php echo $result->muDuration; ?></td>
+                <td><?php echo $result->muPrice; ?></td>
             </tr>
 
 
@@ -131,33 +114,18 @@ if (!empty($_POST["data"])) {
 
         <br>
 
-        <div class="row">
-            <ul class="col-md-5 list-group list-group-flush ">
-                <h4 class="fas fa-user-friends text-white">Current Members</h4>
-                <li class="list-group-item bg-transparent text-white">Ivan Moody
-                    <p class="text-white-50">Lead Vocalist</p>
-                </li>
-                <li class="list-group-item bg-transparent text-white">Andy James
-                    <p class="text-white-50">Lead Guitar, Backing Vocal</p>
-                </li>
-                <li class="list-group-item bg-transparent text-white">Charlie Engen
-                    <p class="text-white-50">Drums</p>
-                </li>
-                <li class="list-group-item bg-transparent text-white">Chris Kael
-                    <p class="text-white-50">Bass, Backing Vocals</p>
-                </li>
-                <li class="list-group-item bg-transparent text-white">Zoltan Bathory
-                    <p class="text-white-50">Rhythm Guitar</p>
-                </li>
-            </ul>
+        <div class="row d-flex align-items-center justify-content-center">
+
+            <div class="col-md-5 list-group list-group-flush my-auto ">
+                <h4 class=" text-white">Current Members <i class="fas fa-user-friends"></i></h4>
+                <h6 class="list-group-item bg-transparent text-white"><?php echo $result->muMembers; ?> </h6>
+            </div>
 
 
-            <ul class="col-md-5 list-group list-group-flush ">
+            <div class="col-md-5 list-group list-group-flush my-auto ">
                 <h4 class="fab fa-studiovinari text-white">Music Style/s</h4>
-                <li class="list-group-item bg-transparent text-white">Heavy Metal</li>
-                <li class="list-group-item bg-transparent text-white">Speed/Thrash Metal</li>
-                <li class="list-group-item bg-transparent text-white">Nü Metal</li>
-            </ul>
+                <h6 class="list-group-item bg-transparent text-white"><?php echo $result->muStyles; ?></h6>
+            </div>
 
         </div>
 
@@ -203,6 +171,7 @@ if (!empty($_POST["data"])) {
 <script>
     tinymce.init({
         selector: 'textarea',
+        menubar: false
     });
 
     const url = new URL(window.location.href);

@@ -10,7 +10,6 @@ export default class Products {
         this.items = this.rootElem.querySelector('.items');
 
         this.trackSearch = this.filter.querySelector('.trackSearch');
-        this.artistSearch = this.filter.querySelector('.artistSearch');
         this.releaseSearch = this.filter.querySelector('.releaseSearch');
     }
 
@@ -20,10 +19,6 @@ export default class Products {
 
         });
 
-        this.artistSearch.addEventListener('input', () => {
-            this.render();
-
-        });
 
         this.releaseSearch.addEventListener('input', () => {
             this.render();
@@ -48,7 +43,7 @@ export default class Products {
             col.classList.add('col-md-6', 'col-lg-4', 'col-xl-3');
 
             col.innerHTML = `
-                <div class="card h-100 text-white bg-dark">
+                <div class="card h-100 text-white bg-dark itemsImg">
                     <img src="uploads/${item.muPicture}" class="card-img-top" alt="">
                     <div class="card-body d-flex flex-column justify-content-between">
                         <div>
@@ -56,7 +51,11 @@ export default class Products {
                             <h6 class="card-undertitle text-white">${item.muArtist}</h6>
                             <p class="card-text">${item.muAlbum}</p>
                         </div>
-                        <a href="muPage.php?rockId=${item.rockId}" class="btn btn-danger text-black w-100 ">View</a>
+                        <a href="muPage.php?rockId=${item.rockId}" 
+                            class="btn btn-primary text-white w-100">
+                                 <i class="fas fa-info-circle">  See More</i>
+                            
+                        </a>
                     </div>
                 </div>
             
@@ -74,10 +73,10 @@ export default class Products {
 
 
     async getData (){
-        console.log(this.artistSearch.value);
+
 
         this.data.trackSearch = this.trackSearch.value;
-        this.data.artistSearch = this.artistSearch.value;
+        this.data.artistSearch = this.trackSearch.value;
         this.data.releaseSearch = this.releaseSearch.value;
 
         const response = await fetch('muApi.php', {

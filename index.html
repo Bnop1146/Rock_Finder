@@ -1,56 +1,75 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="da" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
 
-	<title>Sigende titel</title>
+    <title>Rock Finder</title>
 
-	<meta name="robots" content="All">
-	<meta name="author" content="Udgiver">
-	<meta name="copyright" content="Information om copyright">
+    <meta name="robots" content="All">
+    <meta name="author" content="Udgiver">
+    <meta name="copyright" content="Information om copyright">
 
-	<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-	<link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/6b4a3d7b29.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tiny.cloud/1/h4ru18k2oqic6a1dmyhtku0v5gp4y1lc52kb2r4saf99fguv/tinymce/5/tinymce.min.js"
+            referrerpolicy="origin"></script>
+
 </head>
-
 <body>
 
 
+<nav class="navbar navbar-light justify-content-between p-5">
+    <a class="navbar-brand fw-bold text-white"> <h2>Rock Finder
+        <small class="text-muted">By the People for the Rockers</small>
+    </h2></a>
 
-
+    <form class="form-inline">
+        <a href="insert.php">
+            <div class="Home btn btn-primary text-white">
+                <i class="fas fa-sign-in-alt">  Insert New Album</i>
+            </div>
+        </a>
+    </form>
+</nav>
 
 <div class="container p-5">
-	<div class="products  ">
-		<div class="filter p-5">
-			<div class="row">
-				<div class="col-md-5 ">
-					<input type="search" class="form-control trackSearch text-white bg-dark" placeholder="Search Track">
-				</div>
-				<div class="col-md-4 ">
-					<input type="search" class="form-control artistSearch text-white bg-dark" placeholder="Search Artist">
-				</div>
-				<div class="col-md-3 ">
-					<input type="search" class="form-control releaseSearch text-white bg-dark" placeholder="Search ">
-				</div>
-			</div>
-		</div>
+    <div class="products  ">
+        <div class="filter p-5">
+            <div class="row d-flex align-items-center justify-content-center">
+                <div class="col-md-8 ">
+                    <input type="search" class="form-control trackSearch  text-white bg-dark"
+                           placeholder="Search Track or Artist">
+                </div>
+                <div class="col-md-3 ">
+                    <input type="search" class="form-control releaseSearch text-white bg-dark" placeholder="Search Release ">
+                </div>
+            </div>
+        </div>
 
-		<div class="items ">
-			<!-- Her vises musikken -->
-		</div>
-	</div>
+        <div class="items ">
+            <!-- Her vises musikken -->
+        </div>
+    </div>
 </div>
-
 
 
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script type="module">
-	import Products from "./js/products";
+    import Products from "./js/products";
 
-	const products = new Products();
-	products.init();
+    const products = new Products();
+    products.init();
 
 
 </script>
