@@ -29,15 +29,15 @@
 <body>
 
 
-<nav class="navbar navbar-light justify-content-between p-5">
-    <a class="navbar-brand fw-bold text-white"> <h2>Rock Finder
+<nav class="navbar bg-dark navbar-light justify-content-between p-5">
+    <a class="navbar-brand fw-bold text-white"><h2>Rock Finder
         <small class="text-muted">By the People for the Rockers</small>
     </h2></a>
 
     <form class="form-inline">
         <a href="insert.php">
-            <div class="Home btn btn-primary text-white">
-                <i class="fas fa-sign-in-alt">  Insert New Album</i>
+            <div class="btn btn-outline-light btn-floating btn-rounded m-1">
+                <i class="fas fa-sign-in-alt"> Insert New Album</i>
             </div>
         </a>
     </form>
@@ -52,7 +52,8 @@
                            placeholder="Search Track or Artist">
                 </div>
                 <div class="col-md-3 ">
-                    <input type="search" class="form-control releaseSearch text-white bg-dark" placeholder="Search Release ">
+                    <input type="search" class="form-control releaseSearch text-white bg-dark"
+                           placeholder="Search Release ">
                 </div>
             </div>
         </div>
@@ -63,6 +64,38 @@
     </div>
 </div>
 
+
+<footer class="bg-dark text-center text-white">
+    <div class="container p-4 pb-0">
+        <section class="mb-4">
+
+
+            <p class="d-flex justify-content-center align-items-center p-4">
+                <span class="me-3">Help us Expand</span>
+                <a class="btn btn-outline-light btn-floating btn-rounded m-1" href="insert.php"
+                   role="button">Insert New Album</a>
+            </p>
+
+
+            <a class="btn btn-outline-light btn-floating btn-rounded m-1" href="https://www.google.dk/" role="button"
+            ><i class="fab fa-google"></i
+            ></a>
+
+
+            <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/Bnop1146/Rock_Finder"
+               role="button"
+            ><i class="fab fa-github"></i
+            ></a>
+        </section>
+
+    </div>
+
+    <div class="text-center p-3 bg-black">
+        © 2021 Copyright:
+        <a class="text-white">Bnopone</a>
+    </div>
+
+</footer>
 
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script type="module">

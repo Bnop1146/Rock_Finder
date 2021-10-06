@@ -52,12 +52,16 @@ export default class Products {
                             <p class="card-text">${item.muAlbum}</p>
                         </div>
                         <a href="muPage.php?rockId=${item.rockId}" 
-                            class="btn btn-primary text-white w-100">
+                            class="btn btn-outline-light btn-floating btn-rounded w-100 mt-2">
                                  <i class="fas fa-info-circle">  See More</i>
                             
                         </a>
                     </div>
                 </div>
+                
+                
+                
+                
             
             `;
 

@@ -69,19 +69,19 @@ if (!empty($_POST["data"])) {
 <body>
 
 
-<nav class="navbar navbar-light justify-content-between p-5">
-    <a class="navbar-brand fw-bold text-white"><h2>Rock-Finder
-            <small class="text-muted">Help us create the best Rock library</small>
+<nav class="navbar bg-dark navbar-light justify-content-between p-5 mb-5">
+    <a class="navbar-brand fw-bold text-white"><h2>Rock Finder
+            <small class="text-muted">By the People for the Rockers</small>
         </h2></a>
+
     <form class="form-inline">
         <a href="index.html">
-            <div class="Home btn btn-primary text-white">
-                <i class="fas fa-home">  Return Home</i>
+            <div class="btn btn-outline-light btn-floating btn-rounded m-1">
+                <i class="fas fa-home">Return Home</i>
             </div>
         </a>
     </form>
 </nav>
-
 
 
 <div class="container mb-4 p-4 bg-dark bg-opacity-10 rounded-2 text-white ">
@@ -233,6 +233,9 @@ if (!empty($_POST["data"])) {
 
 </script>
 
+
 </body>
+
+
 </html>
 

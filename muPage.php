@@ -40,25 +40,24 @@ $result = $result[0];
 <body class="text-white">
 
 
-<nav class="navbar navbar-light bg-opacity-25 justify-content-between p-5">
+<nav class="navbar bg-dark navbar-light justify-content-between p-5">
     <a class="navbar-brand fw-bold text-white"><h2>Rock Finder
             <small class="text-muted">By the People for the Rockers</small>
         </h2></a>
 
     <form class="form-inline">
         <a href="index.html">
-            <div class="Home btn btn-primary text-white">
+            <div class="btn btn-outline-light btn-floating btn-rounded m-1">
                 <i class="fas fa-home">Return Home</i>
             </div>
         </a>
     </form>
 </nav>
 
-
 <div id="main" class="container mb-4 p-4 rounded-2 ">
 
 
-    <hr>
+    <hr class=" mt-3 bg-black">
 
     <form class="m-5" method="post" action="insert.php" enctype="multipart/form-data">
         <div class="row">
@@ -114,17 +113,17 @@ $result = $result[0];
 
         <br>
 
-        <div class="row d-flex align-items-center justify-content-center">
+        <div class="row d-flex align-items-center justify-content-sm-evenly">
 
-            <div class="col-md-5 list-group list-group-flush my-auto ">
+            <div class="col-md-5 list-group list-group-flush  ">
                 <h4 class=" text-white">Current Members <i class="fas fa-user-friends"></i></h4>
-                <h6 class="list-group-item bg-transparent text-white"><?php echo $result->muMembers; ?> </h6>
+                <h5 class="list-group-item bg-transparent text-white"><?php echo $result->muMembers; ?> </h5>
             </div>
 
 
-            <div class="col-md-5 list-group list-group-flush my-auto ">
+            <div class="col-md-5 list-group list-group-flush ">
                 <h4 class="fab fa-studiovinari text-white">Music Style/s</h4>
-                <h6 class="list-group-item bg-transparent text-white"><?php echo $result->muStyles; ?></h6>
+                <h5 class="list-group-item bg-transparent text-white"><?php echo $result->muStyles; ?></h5>
             </div>
 
         </div>
@@ -133,7 +132,40 @@ $result = $result[0];
 </div>
 
 
-<hr class="p-1 mt-3">
+<hr class=" mt-3 bg-black">
+
+
+<footer class="bg-dark text-center text-white">
+    <div class="container p-2 pb-0">
+        <section class="mb-2">
+
+
+            <p class="d-flex justify-content-center align-items-center p-2">
+                <span class="me-3">Help us Expand</span>
+                <a class="btn btn-outline-light btn-floating btn-rounded m-1" href="insert.php"
+                   role="button">Insert New Album</a>
+            </p>
+
+
+            <a class="btn btn-outline-light btn-floating btn-rounded m-1" href="https://www.google.dk/" role="button"
+            ><i class="fab fa-google"></i
+                ></a>
+
+
+            <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/Bnop1146/Rock_Finder"
+               role="button"
+            ><i class="fab fa-github"></i
+                ></a>
+        </section>
+
+    </div>
+
+    <div class="text-center p-3 bg-black">
+        © 2021 Copyright:
+        <a class="text-white">Bnopone</a>
+    </div>
+
+</footer>
 
 
 <!--
