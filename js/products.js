@@ -43,18 +43,24 @@ export default class Products {
             col.classList.add('col-md-6', 'col-lg-4', 'col-xl-3');
 
             col.innerHTML = `
-                <div class="card h-100 text-white bg-dark itemsImg">
-                    <img src="uploads/${item.muPicture}" class="card-img-top" alt="">
+                <div class="card h-100 text-white itemsImg">
+                   
                     <div class="card-body d-flex flex-column justify-content-between">
-                        <div>
-                            <h5 class="card-title text-white">${item.muTrack}</h5>
-                            <h6 class="card-undertitle text-white">${item.muArtist}</h6>
-                            <p class="card-text">${item.muAlbum}</p>
+                        <div class="text-center">
+                            <img src="uploads/${item.muPicture}" class="card-img-top" alt="">
+                            <h5 class="card-title text-black mt-5 ">${item.muTrack}</h5>
+                            <p class="text-muted mb-3">Fra ${item.muArtist} kr/md.</p>
+                           
+                            <p class="card-text p-1 text-black">${item.muAlbum}</p>
+                            <p class="card-text p-1 text-black">${item.muGenre}</p>
+                            <p class="card-text p-1 text-black">${item.muStyles}</p>
+
+                            
                         </div>
                         <a href="muPage.php?rockId=${item.rockId}" 
-                            class="btn btn-outline-light btn-floating btn-rounded w-100 mt-2">
-                                 <i class="fas fa-info-circle">  See More</i>
-                            
+                            class="btn btn-floating btn-rounded w-100 mt-4 text-white">
+                                 Læs mere
+                                
                         </a>
                     </div>
                 </div>

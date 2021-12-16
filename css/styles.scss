@@ -8,8 +8,8 @@
 body {
 	margin: 0;
 	font-family: 'Poppins', sans-serif;
-	background: rgb(98,9,9);
-	background:  rgba(98,9,9,1) 0%;
+
+
 
 }
 
@@ -42,9 +42,7 @@ img {
 	display: block;
 	max-width: 100%;
 	height: auto;
-	box-shadow: 0 -10px 70px 0 rgba(253,86,2,0.67);
-	-webkit-box-shadow: 0 -10px 70px 0 rgba(253,86,2,0.67);
-	-moz-box-shadow: 0 -10px 70px 0 rgba(253,86,2,0.67);
+
 
 }
 
@@ -56,5 +54,10 @@ img {
 
 }
 
-
+.card-body{
+	background: #f4f4f4;
+}
+.btn{
+	background: #f01012;
+}
 
