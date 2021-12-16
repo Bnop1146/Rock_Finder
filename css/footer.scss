@@ -1,0 +1,40 @@
+.footer{
+  background-color: var(--text-color);
+}
+.fotover{
+  font-family: var(--overskrift-font);
+}
+.footer-link{
+  font-family: var(--tekst-font);
+  font-size: 14px;
+}
+.copyright{
+  font-family: var(--tekst-font);
+  font-size: 11px;
+}
+.sm{
+  font-size: 24px;
+}
+
+
+
+
+@media (min-width: 768px){
+  .copyright{
+    font-size: 10px;
+  }
+
+}
+
+@media (min-width: 1024px){
+  .fotover{
+    font-size: 26px;
+  }
+  .footer-link{
+    font-size: 14px;
+  }
+  .copyright{
+    font-size: 12px;
+  }
+
+}

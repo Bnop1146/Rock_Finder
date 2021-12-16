@@ -1,0 +1,514 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  font-family: var(--overskrift-font);
+}
+
+ul, ol {
+  margin: 2px 10px 2px 10px;
+  padding: 0;
+  list-style-position: inside;
+}
+
+li {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  font-family: var(--tekst-font);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.heroimage{
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+  .mobil{
+    display: block;
+  }
+  .desk{
+    display: none;
+  }
+
+  @media screen and(min-width:  768px) {
+    .mobil{
+      display: none;
+    }
+    .desk{
+    display: block;
+    }
+    
+  }
+ 
+}
+
+.image_bund {
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  .mobil{
+    display: block;
+  }
+  .desk{
+    display: none;
+  }
+
+  @media screen and(min-width:  768px) {
+    .mobil{
+      display: none;
+    }
+    .desk{
+      display: block;
+    }
+
+  }
+}
+.hero-text-bund button {
+  border: white solid ;
+  border-radius: 6px;
+  display: inline-block;
+  padding: 10px 25px;
+  background-color: transparent;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  top: 34%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: capitalize;
+  font-family: "Red Hat Display";
+
+  .mobil{
+    display: block;
+  }
+  .desk{
+    display: none;
+  }
+
+  @media screen and(min-width:  768px) {
+
+    top: 77%;
+    left: 70%;
+
+    .mobil{
+      display: none;
+    }
+    .desk{
+      display: block;
+    }
+
+  }
+}
+
+.hero-text-bund button {
+  border: white solid ;
+  border-radius: 6px;
+  display: inline-block;
+  padding: 10px 25px;
+  background-color: transparent;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  top: 34%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: capitalize;
+  font-family: "Red Hat Display";
+
+  .mobil{
+    display: block;
+  }
+  .desk{
+    display: none;
+  }
+
+  @media screen and(min-width:  768px) {
+
+    top: 77%;
+    left: 70%;
+
+    .mobil{
+      display: none;
+    }
+    .desk{
+      display: block;
+    }
+
+  }
+}
+.image_bund_2 {
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  .mobil{
+    display: block;
+  }
+  .desk{
+    display: none;
+  }
+
+  @media screen and(min-width:  768px) {
+    .mobil{
+      display: none;
+    }
+    .desk{
+      display: block;
+    }
+
+  }
+}
+.hero-text-bund button {
+  border: white solid ;
+  border-radius: 6px;
+  display: inline-block;
+  padding: 10px 25px;
+  background-color: transparent;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  top: 34%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: capitalize;
+  font-family: "Red Hat Display";
+
+  .mobil{
+    display: block;
+  }
+  .desk{
+    display: none;
+  }
+
+  @media screen and(min-width:  768px) {
+
+    top: 77%;
+    left: 72%;
+
+    .mobil{
+      display: none;
+    }
+    .desk{
+      display: block;
+    }
+
+  }
+}
+
+.hero-text-bund button {
+  border: white solid ;
+  border-radius: 6px;
+  display: inline-block;
+  padding: 10px 25px;
+  background-color: transparent;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  top: 34%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: capitalize;
+  font-family: "Red Hat Display";
+
+  .mobil{
+    display: block;
+  }
+  .desk{
+    display: none;
+  }
+
+  @media screen and(min-width:  768px) {
+
+    top: 77%;
+    left: 70%;
+
+    .mobil{
+      display: none;
+    }
+    .desk{
+      display: block;
+    }
+
+  }
+}
+
+
+.hero-text-bund button:hover {
+  background-color: #101010;
+  color: white;
+
+}
+
+.herobilledeTilbe {
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(../image/tilbehør.png) no-repeat center;
+  background-size: cover;
+}
+
+
+.gameon-section{
+  background-color: var(--first-color);
+
+  .gameon-border{
+    border: solid black 2px;
+    border-radius: 3px;
+    width: 50%;
+    margin: 0 auto;
+    color: white;
+
+
+
+    h2{
+      margin: 15px;
+      text-transform: capitalize;
+    }
+    p{
+      margin: 15px;
+    }
+  }
+
+}
+
+.border-for-text{
+  border-radius: 15px;
+  border: 5px solid black;
+}
+
+
+.text-lys-farve{
+  color: var(--first-color);
+}
+
+.card{
+  border-radius: 1rem;
+  flex-direction: unset !important;
+  margin: 0;
+
+  @media screen and (max-width: 752px ){
+    margin: 0 auto;
+  }
+  @media screen and (min-width: 752px ){
+    margin: 0 auto;
+    width: 90%;
+  }
+
+}
+
+.linje {
+
+  height: 3px;
+  border-radius: 5px;
+  background: #f01012;
+  width: 30%;
+  margin: auto auto 2rem;
+
+
+  @media screen and(min-width: 768px){
+    width: 20%;
+  }
+  @media screen and(min-width: 768px){
+    width: 15%;
+  }
+
+}
+
+.card-body{
+  border: 4px solid black;
+  border-radius: 0.5rem;
+  min-width: 245px;
+  height: 265px;
+}
+
+
+.card-body-anbefal{
+  background-color: var(--first-color);
+  border: 4px solid white;
+  border-radius: 0.5rem;
+  min-width: 245px;
+}
+
+.card-body-products{
+  background-color: white;
+  border: 4px solid darkslategrey;
+  border-radius: 0.5rem;
+  min-width: 245px;
+}
+
+
+
+
+.products .items .card-img-top {
+  height: 250px;
+  width: 100%;
+  padding: 10px;
+  object-fit: cover;
+
+}
+
+
+
+.card-text-skills{
+  font-size: 16px;
+}
+
+.card-body1{
+  margin-top: -20px;
+
+}
+
+
+@media screen and (min-width: 768px ) {
+
+  .herobillede{
+    height: 40vh;
+  }
+
+  .herobilledeTilbe{
+    height: 40vh;
+  }
+
+  .herobilledeDesk{
+    height: 40vh;
+  }
+
+  .card-text-skills {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+
+  }
+
+
+  .card-header-text {
+    margin: 0;
+    padding: 0;
+    font-family: "Red Hat Display", sans-serif;
+    font-size: 30px;
+
+  }
+
+  .card-body-anbefal{
+  }
+
+  .herobillede{
+
+  }
+
+
+
+
+
+}
+@media screen and (min-width: 1024px ){
+  .herobillede{
+    height: 75vh;
+  }
+
+  .herobilledeTilbe{
+    height: 75vh;
+  }
+
+  .herobilledeDesk{
+    height: 75vh;
+  }
+
+
+  .card-text-skills {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+
+  }
+
+
+  .card-header-text {
+    margin: 0;
+    padding: 0;
+    font-family: "Red Hat Display", sans-serif;
+    font-size: 30px;
+
+  }
+
+}
+
+
+
+
+@media screen and (min-width: 768px) {
+  .card-body1 {
+    margin-top: -70px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .card-body1 {
+    margin-top: -100px;
+  }
+}
+
+/* Til Mobil visning */
+@media screen and (min-width: 320px) {
+  .card {
+    max-width: 65%;
+  }
+}
+
+
+
+/* fake skift side */
+
+.prev\/next{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+
+  .icon{
+  font-size: 30px;
+    margin-right: 10px;
+    color: #A22727;
+  }
+  .icon2{
+    font-size: 30px;
+    margin-left: 10px;
+    color: #A22727;
+  }
+  .numberBox{
+    border: black solid 2px;
+    min-width: 30px;
+    text-align: center;
+    .number{
+      font-family: "Red Hat Display", sans-serif;
+    }
+  }
+}

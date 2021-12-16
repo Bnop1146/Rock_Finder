@@ -13,13 +13,16 @@ $result = $result[0];
 <head>
     <meta charset="utf-8">
 
-    <title>Rock Finder</title>
+    <title>Produkt Visning</title>
 
     <meta name="robots" content="All">
     <meta name="author" content="Udgiver">
     <meta name="copyright" content="Information om copyright">
 
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="css/navbar.css" rel="stylesheet" type="text/css">
+    <link href="css/footer.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
@@ -37,135 +40,113 @@ $result = $result[0];
 
 </head>
 
-<body class="text-white">
+<body">
 
+<!-- NavBar Style 3     -->
+<div class="navbar-wrap pt-3 pb-3">
+    <div class="container">
 
-<nav class="navbar bg-dark navbar-light justify-content-between p-5">
-    <a class="navbar-brand fw-bold text-white"><h2>Rock Finder
-            <small class="text-muted">By the People for the Rockers</small>
-        </h2></a>
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand ms-2" href="#">
+                <img src="./Image/Replay%20Logo%20Hvid.svg" alt="" width="100%" height="30">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <form class="form-inline">
-        <a href="index.html">
-            <div class="btn btn-outline-light btn-floating btn-rounded m-1">
-                <i class="fas fa-home">Return Home</i>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav m-auto me-lg-5">
+                    <li class="nav-item">
+                        <a class="nav-link  ms-2 mt-3 text-uppercase text-white" href="#">desktops</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link ms-2 mt-3 text-uppercase text-white" href="#">skærme</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ms-2 mt-3 text-uppercase text-white" href="#">tilbehør</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ms-2 mt-3  mb-2 text-uppercase text-white" href="#">support</a>
+                    </li>
+
+                </ul>
+                <ul class="navbar-nav ml-auto">
+
+                    <li class="nav-item">
+                        <a href="#" class="kurv ms-2"><i class="fas fa-shopping-bag text-white"></i></a>
+                    </li>
+                </ul>
             </div>
-        </a>
-    </form>
-</nav>
+        </nav>
 
-<div id="main" class="container mb-4 p-4 rounded-2 ">
-
-
-    <hr class=" mt-3 bg-black">
-
-    <form class="m-5" method="post" action="insert.php" enctype="multipart/form-data">
-        <div class="row">
-
-
-            <div class="col-sm-4 text-white box-shadow">
-                <img src="uploads/<?php echo $result->muPicture; ?>" class="mx-auto d-block rounded imgMuPage"
-                     width="275"
-                     height="275" alt="">
-            </div>
-            <div class="col-sm-8 " id="detail">
-                <p>Track from your Library</p>
-                <h1><b><?php echo $result->muTrack; ?></b></h1>
-                <h5 class="fw-bold">
-                    <small class="text-muted">Artist :</small>
-                    <?php echo $result->muArtist; ?>
-                </h5>
-                <p>
-                    <small class="text-muted">Genre :</small>
-                    <?php echo $result->muGenre; ?>
-                </p>
-                <button href="https://open.spotify.com/album/2p7EHDph1VrRTfgF9YpzCQ" class="btn text-white">Play
-                </button>
-                <span><button class="btn"><i class="fa fa-heart-o text-white"></i></button></span>
-                <span><button class="btn text-white"><b>...</b></button></span>
-            </div>
-        </div>
-
-        <br>
-
-        <table class="table text-white col-md-3 ">
-            <thead>
-            <tr>
-                <td>#</td>
-                <td>Album</td>
-                <td>Release Date</td>
-                <td><i class="fa fa-clock-o"></i></td>
-                <td><i class="fas fa-dollar-sign"></i></td>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>1</td>
-                <td><?php echo $result->muAlbum; ?></td>
-                <td><?php echo $result->muRelease; ?></td>
-                <td><?php echo $result->muDuration; ?></td>
-                <td><?php echo $result->muPrice; ?></td>
-            </tr>
-
-
-            </tbody>
-        </table>
-
-        <br>
-
-        <div class="row d-flex align-items-center justify-content-sm-evenly">
-
-            <div class="col-md-5 list-group list-group-flush  ">
-                <h4 class=" text-white">Current Members <i class="fas fa-user-friends"></i></h4>
-                <h5 class="list-group-item bg-transparent text-white"><?php echo $result->muMembers; ?> </h5>
-            </div>
-
-
-            <div class="col-md-5 list-group list-group-flush ">
-                <h4 class="fab fa-studiovinari text-white">Music Style/s</h4>
-                <h5 class="list-group-item bg-transparent text-white"><?php echo $result->muStyles; ?></h5>
-            </div>
-
-        </div>
-
-
+    </div>
 </div>
 
 
-<hr class=" mt-3 bg-black">
+<div id="main" class="container mb-4 p-4 rounded-2 "></div>
 
 
-<footer class="bg-dark text-center text-white">
-    <div class="container p-2 pb-0">
-        <section class="mb-2">
+
+    <form class="" method="post" action="insert.php" enctype="multipart/form-data">
+        <div class="row">
 
 
-            <p class="d-flex justify-content-center align-items-center p-2">
-                <span class="me-3">Help us Expand</span>
-                <a class="btn btn-outline-light btn-floating btn-rounded m-1" href="insert.php"
-                   role="button">Insert New Album</a>
-            </p>
+            <div class="col-sm-6 text-white box-shadow">
+                <img src="uploads/<?php echo $result->muPicture; ?>" class="mx-auto d-block rounded"
+                     width="275"
+                     height="275" alt="">
+            </div>
+            <div class="col-sm-6 " id="detail">
+
+                <h1 class="mb-3"><b><?php echo $result->muTrack; ?></b></h1>
+                <h5 class="fw-bold mb-3">
+                    <p>Pris
+                    <small class="text-muted"> :
+                        <?php echo $result->muArtist; ?> kr/md
+                    </small>
+                    </p>
+                </h5>
+
+                <h5 class="fw-bold ">
+                    <p>Specs</p>
+                    <p>
+                        <small class="text-muted">
+                            <?php echo $result->muAlbum; ?>
+                        </small>
+                    </p>
+                </h5>
+
+                <h5 class="fw-bold ">
+                    <p>
+                        <small class="text-muted">
+                            <?php echo $result->muGenre; ?>
+                        </small>
+                    </p>
+                </h5>
+
+                <h5 class="fw-bold mb-3 ">
+                    <p>
+                        <small class="text-muted">
+                            <?php echo $result->muStyles; ?>
+                        </small>
+                    </p>
+                </h5>
 
 
-            <a class="btn btn-outline-light btn-floating btn-rounded m-1" href="https://www.google.dk/" role="button"
-            ><i class="fab fa-google"></i
-                ></a>
+
+            </div>
+        </div>
+
+        <br>
+
+    </form>
 
 
-            <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/Bnop1146/Rock_Finder"
-               role="button"
-            ><i class="fab fa-github"></i
-                ></a>
-        </section>
 
-    </div>
 
-    <div class="text-center p-3 bg-black">
-        © 2021 Copyright:
-        <a class="text-white">Bnopone</a>
-    </div>
 
-</footer>
+
 
 
 <!--
@@ -198,6 +179,75 @@ $result = $result[0];
 </div>
 
 
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f01012" fill-opacity="1" d="M0,128L1440,256L1440,320L0,320Z"></path></svg>
+
+
+<footer class="footer">
+    <div class="container">
+        <div class="row py-5">
+            <div class="col-sm-12 col-md-2 col-lg-2 m-0 m-md-0">
+                <a href="#" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
+                    <img src="./Image/Replay%20Logo%20Hvid.svg" class="bi " width="100%" height="32">
+
+                </a>
+            </div>
+
+            <div class="col-md-1 col-lg-2">
+
+            </div>
+
+            <div class="col-sm-12 col-md-3 col-lg-3 m-3 m-md-0">
+                <h5 class="fotover mb-2 text-white">Produkter</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="footer-link p-0 text-decoration-none text-white">Desktops</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="footer-link p-0 text-decoration-none text-white">Skærme</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="footer-link p-0 text-decoration-none text-white">Tilbehør</a></li>
+                </ul>
+            </div>
+
+            <div class="col-sm-12 col-md-3 col-lg-3 m-3 m-md-0">
+                <h5 class="fotover mb-2 text-white">Support</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="footer-link p-0 text-white text-decoration-none">Kontakt</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="footer-link p-0 text-white text-decoration-none">Om os</a></li>
+                </ul>
+            </div>
+
+            <div class="co-sm-12 col-md-3 m-3 col-lg-2 m-md-0">
+                <h5 class="fotover mb-3 text-white">Fang os på</h5>
+                <ul class="nav flex-row">
+                    <li class="me-3"><a class="text-white" href="#"><i class="sm fab fa-facebook-f"></i></a></li>
+                    <li class=""><a class="text-white" href="#"><i class="sm fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div class="d-flex flex-wrap justify-content-between align-items-center py-3  border-top">
+                <div class="col-md-4 d-flex align-items-center justify-content-center justify-content-md-start mb-2">
+                    <span class="copyright text-white">&copy; Copyrigt 2021. Alle rettigheder forbeholdes</span>
+                </div>
+
+                <ul class="nav col-md-4 justify-content-center justify-content-md-end list-unstyled d-flex">
+                    <li class="ms-3"><a class="text-white" href="#"><i class="fab fa-cc-visa"></i></a></li>
+                    <li class="ms-3"><a class="text-white" href="#"><i class="fab fa-cc-mastercard"></i></a></li>
+                    <li class="ms-3"><a class="text-white" href="#"><i class="fab fa-cc-paypal"></i></a></li>
+                    <li class="ms-3"><a class="text-white" href="#"><i class="fab fa-apple-pay"></i></a></li>
+                    <li class="ms-3"><a class="text-white" href="#"><i class="fab fa-google-pay"></i></a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>

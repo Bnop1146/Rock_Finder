@@ -13,10 +13,20 @@ $custom-colors: (
 );
  */
 
-$custom-colors: (
-        "primary": rgba(98,9,9,1),
-        "minFarve": #ffff00
+:root {
+  --first-color: #f01012;
+  --white-color: #ffffff;
+  --text-color: #1a1a1a;
+}
+:root{
+  --overskrift-font: 'Red Hat Display',serif;
+  --tekst-font: 'Poppins',serif;
+}
 
+$custom-colors: (
+        "primary": #f01012,
+        "red" :#f01012,
+        "minFarve": #f01012,
 );
 $theme-colors: map-merge($theme-colors, $custom-colors);
 

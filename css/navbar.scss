@@ -1,0 +1,44 @@
+.navbar-wrap{
+  background-color: #101010;
+}
+.navbar-toggler{
+  &:focus{
+    box-shadow: none!important;
+  }
+}
+
+.navbar-toggler-icon{
+  background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,2550.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+
+}
+
+.nav-link{
+  color: var(--white-color)!important;
+  font-family: var(--overskrift-font);
+  font-size: 13px;
+  border-bottom:2px solid #50505050;
+
+  &:hover{
+    color: #80808080;
+  }
+  &:focus{
+    color: var(--white-color);
+  }
+}
+
+.kurv{
+  color: var(--text-color);
+  font-size: 20px;
+
+  &:hover{
+    color: #80808080;
+  }
+}
+
+@media (min-width: 1024px){
+  .nav-link{
+    font-size: 14px;
+    border-bottom: none;
+  }
+
+}
