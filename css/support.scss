@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Red+Hat+Display:wght@700&display=swap');
+
+
+.herobillede {
+  width:100%;
+  height: 35vh;
+  background:url(../Image/supportbillede.png);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.imgover{
+  color:var(--white-color);
+  font-family: var(--overskrift-font);
+}
+
+.contact-form{
+  max-width: 600px;
+  padding: 0 10px;
+  overflow: hidden;
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.contact-form-text{
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 16px 0;
+  padding: 20px 20px;
+  outline: none;
+  color: var(--text-color);
+  transition: 0.5s;
+  font-size: 14px;
+}
+
+textarea.contact-form-text{
+  resize: none;
+  height: 120px;
+}
+.contact-form-btn{
+  border: 0;
+  background: var(--first-color);
+  color:var(--white-color);
+  padding: 12px 50px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: 0.5s;
+  margin-top: 5px;
+  font-family: var(--tekst-font);
+}
+
+.infotekst{
+  padding: 20px;
+  line-height: 2;
+  font-size: 30px;
+  color: var(--text-color);
+  font-family: var(--tekst-font);
+}
+.infotekst2{
+  line-height: 2;
+  color: var(--text-color);
+  font-size: 15px;
+  font-family: var(--tekst-font);
+
+}
+.infoteks3{
+  line-height: 2;
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 15px;
+  font-family: var(--tekst-font);
+}
+
+.infoteks3:hover{
+  color: var(--text-color);
+}
+.infoover{
+  padding: 20px;
+  font-size: 22px;
+  text-align: center;
+  color: var(--text-color);
+  font-family: var(--overskrift-font);
+}
+
+.åbenover{
+  padding: 20px;
+  font-size: 22px;
+  text-align: center;
+  color: var(--text-color);
+  margin-top: 80px;
+  font-family: var(--overskrift-font);
+}
+
+.åbentekst{
+  color: var(--text-color);
+  margin-top: 30px;
+  font-size: 15px;
+  font-family: var(--tekst-font);
+}
+
+.line2{
+  margin: auto;
+  background-color: var(--text-color);
+  height: 1px;
+  width: 15%;
+  text-align: center;
+}
+.line3{
+  margin: auto;
+  background-color: var(--text-color);
+  height: 1px;
+  width: 10%;
+  text-align: center;
+}
+
+
+.ksektekst{
+  padding: 15px;
+  line-height: 2.5;
+  font-size: 13px;
+  color: var(--text-color);
+  margin-top: -10px;
+  font-family: var(--tekst-font);
+}
+
+.ksekover{
+  padding: 15px;
+  font-size: 22px;
+  color: var(--text-color);
+  margin-top: 50px;
+  margin-bottom: -10px;
+  font-family: var(--overskrift-font);
+}
+
+
+.sektion2{
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 100px;
+
+}
+
+.line1{
+  margin: 15px;
+  background-color: var(--text-color);
+  height: 1px;
+  width: 40%;
+}
+
+.map{
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.omholdet{
+  margin-top: 80px;
+}
+
+.lineholdet{
+  margin: auto;
+  background-color: var(--text-color);
+  height: 1px;
+  width: 16%;
+}
+
+.overholdet{
+  font-size: 23px;
+  text-align: center;
+  font-family: var(--overskrift-font);
+}
+
+.kortsektion{
+  padding: 25px;
+}
+
+.replayline{
+  margin: auto;
+  background-color: var(--white-color);
+  height: 1px;
+  width: 15%;
+
+}
+
+.omreplay{
+  background: var(--first-color);
+  padding: 10px;
+}
+.replayover{
+  padding: 15px;
+  font-size: 22px;
+  color:var(--white-color);
+  margin-bottom: 5px;
+  text-align: center;
+  font-family: var(--overskrift-font);
+}
+.replaytekst{
+  padding: 20px;
+  line-height: 2.5;
+  font-size: 13px;
+  color:var(--white-color);
+  margin-top: 5px;
+  text-align: center;
+  font-family: var(--tekst-font);
+}
+.korttekst{
+  font-family: var(--tekst-font);
+}
+.kortmail{
+  font-family: var(--tekst-font);
+  font-size: 14px;
+}
+
+
+@media screen and (min-width: 768px){
+  .kortmail{
+    font-size: 15px;
+  }
+  .herobillede{
+    height: 40vh;
+  }
+  .contact-form{
+    padding: 0 60px;
+    max-width: 700px;
+  }
+  .åbenover{
+    margin-top: 70px;
+    font-size: 24px;
+  }
+  .infoover{
+    font-size: 24px;
+  }
+  .ksektekst{
+    padding: 60px;
+    font-size: 14px;
+    margin-bottom: -30px;
+    margin-top: -40px;
+  }
+  .ksekover{
+    font-size: 24px;
+    padding: 60px;
+    text-align: left;
+    margin-bottom: -40px;
+  }
+  .line1{
+    margin: 0 60px;
+    width: 20%;
+  }
+  .infotekst{
+    margin-top: 30px;
+  }
+
+  .sektion2{
+    text-align: center;
+    margin-top: 60px!important;
+  }
+  .lineholdet{
+    width: 8%;
+  }
+
+  .contact-form{
+    text-align: left;
+  }
+  .replayline{
+    width: 7%;
+  }
+
+
+}
+
+@media screen and (min-width: 1024px){
+  .herobillede{
+    height: 50vh;
+  }
+  .contact-form{
+    padding: 0 60px;
+    max-width: 800px;
+  }
+  .sektion2{
+    text-align: center;
+    margin-top: 90px!important;
+  }
+  .ksektekst{
+    padding: 60px;
+    font-size: 15px;
+    width: 85%!important;
+  }
+  .ksekover{
+    margin-bottom: -30px;
+    padding: 60px;
+    font-size: 24px;
+  }
+  .line1{
+    margin: 0 60px;
+    width: 15%;
+  }
+  .overholdet{
+    font-size: 24px;
+  }
+  .replayover{
+    font-size: 24px;
+  }
+  .replayline{
+    width: 8%;
+  }
+  .lineholdet{
+    width: 4%;
+  }
+  .replaycon{
+    max-width: 750px;
+  }
+  .replaytekst{
+    font-size: 15px;
+  }
+  .kortsektion{
+    margin-bottom: 100px;
+  }
+}
