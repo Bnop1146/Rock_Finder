@@ -9,7 +9,8 @@ $result = $result[0];
 
 
 <!DOCTYPE html>
-<html lang="da" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<html lang="da" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
 
@@ -57,7 +58,7 @@ $result = $result[0];
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav m-auto me-lg-5">
                     <li class="nav-item">
-                        <a class="nav-link  ms-2 mt-3 text-uppercase text-white" href="#">desktops</a>
+                        <a class="nav-link  ms-2 mt-3 text-uppercase text-white" href="index.html">desktops</a>
                     </li>
 
                     <li class="nav-item">
@@ -94,8 +95,8 @@ $result = $result[0];
 
             <div class="col-sm-6 text-white box-shadow">
                 <img src="uploads/<?php echo $result->muPicture; ?>" class="mx-auto d-block rounded"
-                     width="275"
-                     height="275" alt="">
+                     width="300"
+                     height="300" alt="">
             </div>
             <div class="col-sm-6 " id="detail">
 
@@ -108,7 +109,7 @@ $result = $result[0];
                     </p>
                 </h5>
 
-                <h5 class="fw-bold ">
+                <h5 class="fw-bold mb-1 ">
                     <p>Specs</p>
                     <p>
                         <small class="text-muted">
@@ -117,7 +118,7 @@ $result = $result[0];
                     </p>
                 </h5>
 
-                <h5 class="fw-bold ">
+                <h5 class="fw-bold mb-1 ">
                     <p>
                         <small class="text-muted">
                             <?php echo $result->muGenre; ?>
@@ -133,7 +134,7 @@ $result = $result[0];
                     </p>
                 </h5>
 
-
+                <button type="button" class="btn text-white" style="width: 50%; font-size: x-large" >Køb</button>
 
             </div>
         </div>
@@ -172,7 +173,7 @@ $result = $result[0];
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <a class="btn btn-primary" type="button" href="insert.php" role="button">Insert New Artist</a>
+                <a class="btn btn-primary" type="button" href="" role="button">Insert New Artist</a>
             </div>
         </div>
     </div>
